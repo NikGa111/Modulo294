@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #brand{
+            text-align: center; 
+            font-size: 36;
+        }
+
+        label {
+            font-size: 24;
+            display: block;
+        }
+
+        .distanza{
+            padding-bottom: 30px;
+        }
+        
+        .services-titolo {
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }   
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="brand">Let's level up your brand,together</h1>
+    <form action="#" method="post">
+
+        <div><label for="name">Name</label></div>
+        <div class="distanza"><input type="text" name="name" id="name" placeholder="Your name"></div>
+        
+
+        <div><label for="email">Email</label></div>
+        <div class="distanza"><input type="email" name="email" id="email" placeholder="you@company.com"></div>
+
+        <div><label for="phone_number">Phone number</label></div>
+        <div class="distanza"><input type="tel" name="phone_number" id="phone_number" placeholder="+1(555)000-0000"></div>
+        
+        <div><label for="help">How can we help</label></div>
+        <div class="distanza"><textarea name="help" id="help" placeholder="Tell us a little about the project..."></textarea></div>
+        
+        <div class="services-titolo">Services</div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="web-design" name="services" value="web-design">
+            <label for="web-design" class="ckbox-item">Website design</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="ux-design" name="services" value="ux-design">
+            <label for="ux-design" class="ckbox-item">UX design</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="user-research" name="services" value="user-research">
+            <label for="user-research" class="ckbox-item">User research</label>
+        </div>
+
+        <button type="submit">Get started</button>
+    </form>
+</body>
+</html>
