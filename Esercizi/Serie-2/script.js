@@ -28,24 +28,59 @@ while (a < 6) {
 
 // 2.2
 somma = 0;
-a = 1;
-while (a <= 100) {
-    somma +=a;
-    a++;
+let b = 1;
+while (b <= 100) {
+    somma +=b;
+    b++;
 }
 console.log(somma);
 
 // Parte 3
+let x = 10;
+do { //viene fatto almeno una volta perché prima esegue il codice poi verifica la condizione
+    console.log(x);
+    x--;
+}while (x>5);
 
 
 // Parte 4
-
-
+let studenti = ["Luca", "Anna", "Marco"];
+for (const studente of studenti) {
+    console.log(studente);
+}
 // Parte 5
-
+numeri = [2, 4, 7, 10, 15];
+for (const numero of numeri) {
+    if (numero == 10){
+        console.log("Trovato il numero " + numero + "!");
+        break;
+    }
+}
 
 // Parte 6
+for (let i = 1; i < 10; i++) {
+   if(i % 2){
+        continue;
+    }
+    console.log(i);
+} 
 
+for (let j = 1; j < 20; j++) {
+   if(!(j % 3)){
+        continue;
+    }
+    console.log(j);
+} 
 
 // Parte 7
-
+for (let l = 1; l < 20; l++) {
+   if(!(l % 3) && !(l % 5)){
+        console.log("FizzBuzz");
+    }else if (!(l % 5)){
+        console.log("Buzz");
+    }else if (!(l % 3)){
+        console.log("Fizz");
+    }else {
+        console.log(l);
+    }
+} 
