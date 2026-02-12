@@ -1,0 +1,16 @@
+/*  Nicola Galeano 
+    version: 12.02.2026
+    Serie 4 
+*/
+
+.rosso {
+color: red;
+}
+.ok {
+color: green;
+font-weight: bold;
+}
+.errore {
+color: red;
+font-weight: bold;
+}
