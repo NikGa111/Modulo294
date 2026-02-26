@@ -26,7 +26,7 @@ ese5.style.color = "blue";
 // Parte 6
 let ese6 = document.querySelectorAll(".evidenziato");
 for (let el of ese6) {
- console.log(el.style.fontWeight = "bold");
+    el.style.fontWeight = "bold";
 }
 
 // Parte 7
@@ -60,8 +60,8 @@ let uova = document.createElement("li");
 let acqua = document.createElement("li");
 uova.textContent = "Uova";
 acqua.textContent = "Acqua";
-lista.append(uova); 
-lista.prepend(acqua); 
+lista.insertAdjacentElement("afterbegin", uova); 
+lista.insertAdjacentElement("beforeend", acqua); 
 
 // Parte 12
 let rimuovere = document.querySelector("#daRimuovere");
@@ -79,5 +79,4 @@ es14.classList.add("ok");
 // Parte 15
 let es15 = document.querySelector("#es15");
 let doveButtarlo = es15.firstElementChild;
-console.log(es15.dataset.id);
 doveButtarlo.innerHTML = `Brand: ${es15.dataset.brand} <br> Modello: ${es15.dataset.model} `;
