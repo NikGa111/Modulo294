@@ -1,5 +1,5 @@
 // Nicola Galeano 
-// version: 12.02.2026
+// version: 26.02.2026
 // Serie 4
 
 // Parte 1
@@ -40,3 +40,44 @@ for (let el of ese8) {
 }
 
 // Parte 9
+let es9 = document.querySelector("#es9");
+let es9Testo = document.createElement("li");
+es9Testo.textContent = "Pane";
+es9.append(es9Testo); 
+
+// Parte 10
+let es10 = document.querySelector("#es10");
+let es10UltimoTesto = document.createElement("li");
+let es10PrimoTesto = document.createElement("li");
+es10UltimoTesto.textContent = "Ultimo";
+es10PrimoTesto.textContent = "Primo";
+es10.append(es10UltimoTesto); 
+es10.prepend(es10PrimoTesto); 
+
+// Parte 11
+let lista = document.querySelector("#lista");
+let uova = document.createElement("li");
+let acqua = document.createElement("li");
+uova.textContent = "Uova";
+acqua.textContent = "Acqua";
+lista.append(uova); 
+lista.prepend(acqua); 
+
+// Parte 12
+let rimuovere = document.querySelector("#daRimuovere");
+rimuovere.remove();
+
+// Parte 13
+let selezionaRosso = document.querySelector("#titoloE13");
+selezionaRosso.classList.add("rosso"); 
+
+// Parte 14
+let es14 = document.querySelector("#titoloE14");
+es14.classList.remove("errore"); 
+es14.classList.add("ok"); 
+
+// Parte 15
+let es15 = document.querySelector("#es15");
+let doveButtarlo = es15.firstElementChild;
+console.log(es15.dataset.id);
+doveButtarlo.innerHTML = `Brand: ${es15.dataset.brand} <br> Modello: ${es15.dataset.model} `;
