@@ -1,0 +1,126 @@
+/* Nicola Galeano
+   version: 05.03.2026 */
+/* Serie 5 */
+
+/* Parte 0 */
+/* Stile generale della pagina */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+
+/* Titolo pagina */
+
+h1{
+    text-align: center;
+}
+
+
+/* Parte 1 */
+/* Layout principale */
+
+main{
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+
+/* Parte 2 */
+/* Sezione prodotti */
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Card prodotto */
+
+.products article{
+    width: 200px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+
+/* Immagine prodotto */
+
+.products img{
+    width: 100%;
+}
+
+
+/* Nome prodotto */
+
+.products h3{
+    margin: 10px 0;
+}
+
+
+/* Prezzo */
+
+.price{
+    color: green;
+    font-weight: bold;
+}
+
+
+/* Input quantità */
+
+input[type="number"]{
+    width: 60px;
+    margin-top: 5px;
+}
+
+
+/* Bottone acquisto */
+
+button{
+    display: block;
+    margin-top: 10px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+
+/* Parte 4 */
+/* Sezione carrello */
+
+.cart{
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+
+/* Lista carrello */
+
+.cart ul{
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Riga carrello */
+
+.cart li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+/* Totale */
+
+#totale{
+    margin-top: 20px;
+    font-weight: bold;
+}
