@@ -62,3 +62,12 @@ timerIndietro.textContent = contatoreIndietro;
  clearInterval(idIndietro); 
  }
 }, 1000);
+
+// Parte 8
+let numeroConto = 0;
+let counter = document.querySelector("#counter");
+let contatoreClick = document.querySelector("#contatore");
+counter.addEventListener("click", function() {
+    numeroConto = numeroConto + 1
+    contatoreClick.textContent = numeroConto;
+    });
