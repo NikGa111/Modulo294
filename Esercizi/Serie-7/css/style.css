@@ -1,0 +1,189 @@
+/* Nicola Galeano
+   version: 12.03.2026 */
+/* Mini Ecommerce Fast-Food */
+
+
+/* Stile generale della pagina */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+
+/* Titolo pagina */
+
+h1 {
+    text-align: center;
+}
+
+
+/* Layout principale */
+
+main {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+
+/* Sezione prodotti */
+
+.products {
+    flex: 1;
+}
+
+
+/* Titolo categoria */
+
+.products h2 {
+    margin: 20px 0 10px 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+
+/* Contenitore card per categoria */
+
+.categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Card prodotto */
+
+.categoria article {
+    width: 200px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+
+/* Immagine prodotto */
+
+.categoria img {
+    width: 100%;
+}
+
+
+/* Nome prodotto */
+
+.categoria h3 {
+    margin: 10px 0;
+}
+
+
+/* Prezzo prodotto */
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* Bottone aggiungi */
+
+button {
+    display: block;
+    margin-top: 10px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+
+/* Sezione carrello */
+
+.cart {
+    width: 320px;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+
+/* Lista carrello */
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Riga carrello */
+
+.cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 6px;
+}
+
+
+/* Nome prodotto nel carrello */
+
+.cart-name {
+    flex: 1;
+}
+
+
+/* Controlli quantità */
+
+.cart-qty {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+
+/* Bottoni + e − */
+
+.qty-btn {
+    display: inline;
+    margin-top: 0;
+    padding: 2px 7px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+
+/* Prezzo nel carrello */
+
+.cart-price {
+    white-space: nowrap;
+}
+
+
+/* Bottone rimuovi */
+
+.remove-btn {
+    display: inline;
+    margin-top: 0;
+    padding: 3px 6px;
+    font-size: 0.8em;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+
+/* Totale */
+
+#totale {
+    margin-top: 20px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}

@@ -2,10 +2,11 @@
    version: 05.03.2026 */
 /* Serie 6 */
 
+
 /* Parte 0 */
 /* Stile generale della pagina */
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 20px;
@@ -15,7 +16,7 @@ body{
 
 /* Titolo pagina */
 
-h1{
+h1 {
     text-align: center;
 }
 
@@ -23,7 +24,7 @@ h1{
 /* Parte 1 */
 /* Layout principale */
 
-main{
+main {
     display: flex;
     gap: 40px;
     align-items: flex-start;
@@ -33,7 +34,7 @@ main{
 /* Parte 2 */
 /* Sezione prodotti */
 
-.products{
+.products {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -42,7 +43,7 @@ main{
 
 /* Card prodotto */
 
-.products article{
+.products article {
     width: 200px;
     background: white;
     border: 1px solid #ddd;
@@ -52,37 +53,39 @@ main{
 
 /* Immagine prodotto */
 
-.products img{
+.products img {
     width: 100%;
 }
 
 
 /* Nome prodotto */
 
-.products h3{
+.products h3 {
     margin: 10px 0;
 }
 
 
-/* Prezzo */
+/* Prezzo prodotto */
 
-.price{
+.price {
     color: green;
     font-weight: bold;
 }
 
 
+/* Parte 5 */
 /* Input quantità */
 
-input[type="number"]{
+input[type="number"] {
     width: 60px;
     margin-top: 5px;
 }
 
 
+/* Parte 3 */
 /* Bottone acquisto */
 
-button{
+button {
     display: block;
     margin-top: 10px;
     padding: 6px;
@@ -93,34 +96,68 @@ button{
 /* Parte 4 */
 /* Sezione carrello */
 
-.cart{
-    width: 250px;
+.cart {
+    width: 280px;
     background: white;
     padding: 15px;
     border: 1px solid #ddd;
+    flex-shrink: 0;
 }
 
 
 /* Lista carrello */
 
-.cart ul{
+.cart ul {
     list-style: none;
     padding: 0;
 }
 
 
-/* Riga carrello */
+/* Parte 5 */
+/* Riga carrello: nome a sinistra, prezzo a destra */
 
-.cart li{
+.cart li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
+    gap: 8px;
+}
+
+.cart-name {
+    flex: 1;
+}
+
+.cart-price {
+    white-space: nowrap;
 }
 
 
+/* Parte 6 */
+/* Bottone rimuovi */
+
+.remove-btn {
+    display: inline;
+    margin-top: 0;
+    padding: 3px 6px;
+    font-size: 0.8em;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+
+/* Parte 5 */
 /* Totale */
 
-#totale{
+#totale {
     margin-top: 20px;
     font-weight: bold;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
 }
