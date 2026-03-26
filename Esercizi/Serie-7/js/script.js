@@ -66,9 +66,6 @@ for (const categoria in prodotti) {
             aggiungiAlCarrello(prodotto);
 
 
-
- 
-
         });
 
         div.appendChild(article);
@@ -76,6 +73,29 @@ for (const categoria in prodotti) {
     });
 
     section.appendChild(div);
+
+}
+
+
+
+
+const cartToggle = document.querySelector("#cart-toggle");
+const cartAside  = document.querySelector(".cart");
+const cartBadge  = document.querySelector("#cart-badge");
+
+cartToggle.addEventListener("click", () => {
+
+    cartAside.classList.toggle("cart-hidden");
+
+});
+
+
+
+
+function aggiornaBadge() {
+
+    const totaleQuantita = carrello.reduce((acc, item) => acc + item.quantita, 0);
+    cartBadge.textContent = totaleQuantita;
 
 }
 
@@ -148,6 +168,7 @@ function renderCarrello() {
 
     totalText.textContent = "Totale: CHF " + totale.toFixed(2);
 
+    aggiornaBadge();
 
 
 

@@ -22,6 +22,47 @@ h1 {
 
 
 
+header {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+
+
+#cart-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+
+
+#cart-badge {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.6em;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
 main {
     display: flex;
     gap: 40px;
@@ -104,6 +145,13 @@ button {
     padding: 15px;
     border: 1px solid #ddd;
     flex-shrink: 0;
+}
+
+
+
+
+.cart-hidden {
+    display: none;
 }
 
 
