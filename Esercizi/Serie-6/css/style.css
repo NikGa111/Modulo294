@@ -3,7 +3,7 @@
 /* Serie 6 */
 
 /* Parte 0 */
-/* Stile generale della pagina */
+
 
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +13,7 @@ body{
 }
 
 
-/* Titolo pagina */
+
 
 h1{
     text-align: center;
@@ -21,7 +21,7 @@ h1{
 
 
 /* Parte 1 */
-/* Layout principale */
+
 
 main{
     display: flex;
@@ -31,7 +31,7 @@ main{
 
 
 /* Parte 2 */
-/* Sezione prodotti */
+
 
 .products{
     display: flex;
@@ -40,7 +40,7 @@ main{
 }
 
 
-/* Card prodotto */
+
 
 .products article{
     width: 200px;
@@ -50,21 +50,21 @@ main{
 }
 
 
-/* Immagine prodotto */
+
 
 .products img{
     width: 100%;
 }
 
 
-/* Nome prodotto */
+
 
 .products h3{
     margin: 10px 0;
 }
 
 
-/* Prezzo */
+
 
 .price{
     color: green;
@@ -72,7 +72,7 @@ main{
 }
 
 
-/* Input quantità */
+
 
 input[type="number"]{
     width: 60px;
@@ -80,7 +80,7 @@ input[type="number"]{
 }
 
 
-/* Bottone acquisto */
+
 
 button{
     display: block;
@@ -91,7 +91,7 @@ button{
 
 
 /* Parte 4 */
-/* Sezione carrello */
+
 
 .cart{
     width: 250px;
@@ -101,7 +101,7 @@ button{
 }
 
 
-/* Lista carrello */
+
 
 .cart ul{
     list-style: none;
@@ -109,7 +109,7 @@ button{
 }
 
 
-/* Riga carrello */
+
 
 .cart li{
     display: flex;
@@ -118,7 +118,7 @@ button{
 }
 
 
-/* Totale */
+
 
 #totale{
     margin-top: 20px;

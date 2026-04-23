@@ -1,9 +1,9 @@
 /* Nicola Galeano
-   version: 12.03.2026 */
-/* Mini Ecommerce Fast-Food */
+   version: 26.03.2026 */
+/* Serie-7 */
 
 
-/* Stile generale della pagina */
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -13,14 +13,55 @@ body {
 }
 
 
-/* Titolo pagina */
+
 
 h1 {
     text-align: center;
 }
 
 
-/* Layout principale */
+
+
+header {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+
+
+#cart-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+
+
+#cart-badge {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.6em;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
 main {
     display: flex;
@@ -29,14 +70,14 @@ main {
 }
 
 
-/* Sezione prodotti */
+
 
 .products {
     flex: 1;
 }
 
 
-/* Titolo categoria */
+
 
 .products h2 {
     margin: 20px 0 10px 0;
@@ -45,7 +86,7 @@ main {
 }
 
 
-/* Contenitore card per categoria */
+
 
 .categoria {
     display: flex;
@@ -54,7 +95,7 @@ main {
 }
 
 
-/* Card prodotto */
+
 
 .categoria article {
     width: 200px;
@@ -64,21 +105,21 @@ main {
 }
 
 
-/* Immagine prodotto */
+
 
 .categoria img {
     width: 100%;
 }
 
 
-/* Nome prodotto */
+
 
 .categoria h3 {
     margin: 10px 0;
 }
 
 
-/* Prezzo prodotto */
+
 
 .price {
     color: green;
@@ -86,7 +127,7 @@ main {
 }
 
 
-/* Bottone aggiungi */
+
 
 button {
     display: block;
@@ -96,10 +137,10 @@ button {
 }
 
 
-/* Sezione carrello */
+
 
 .cart {
-    width: 320px;
+    width: 500px;
     background: white;
     padding: 15px;
     border: 1px solid #ddd;
@@ -107,33 +148,43 @@ button {
 }
 
 
-/* Lista carrello */
+
+
+.cart-hidden {
+    display: none;
+}
+
+
+
 
 .cart ul {
+    
     list-style: none;
     padding: 0;
 }
 
 
-/* Riga carrello */
+
 
 .cart li {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
     gap: 6px;
+    width: 350px;
 }
 
 
-/* Nome prodotto nel carrello */
+
 
 .cart-name {
-    flex: 1;
+    flex:1;
 }
 
 
-/* Controlli quantità */
+
 
 .cart-qty {
     display: flex;
@@ -143,25 +194,28 @@ button {
 }
 
 
-/* Bottoni + e − */
+
 
 .qty-btn {
+    
     display: inline;
     margin-top: 0;
     padding: 2px 7px;
     font-size: 1em;
     cursor: pointer;
+    
 }
 
 
-/* Prezzo nel carrello */
+
 
 .cart-price {
     white-space: nowrap;
+    width: 100px;
 }
 
 
-/* Bottone rimuovi */
+
 
 .remove-btn {
     display: inline;
@@ -179,7 +233,7 @@ button {
 }
 
 
-/* Totale */
+
 
 #totale {
     margin-top: 20px;

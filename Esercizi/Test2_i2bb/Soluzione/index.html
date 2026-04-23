@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Test 2 - Verifica JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main class="container">
+   
+    <section class="grid-exercises">
+
+      <!-- ESERCIZIO 1 -->
+      <article class="exercise-card full-width" id="esercizio-1">
+        <header class="exercise-header">
+          <h2 class="exercise-title">Esercizio 1 – Catalogo elettronica per categoria</h2>
+          <span class="exercise-tag">catalogo · oggetti · griglia</span>
+        </header>
+        <p class="exercise-desc">
+          Visualizza un catalogo di prodotti elettronici (laptop, smartphone e accessori),
+          raggruppati per categoria, con card prodotto in griglia.
+        </p>
+        <div class="block">
+          <p class="block-title">Catalogo elettronica</p>
+          <div class="controls">
+            <button id="btn-mostra-catalogo" class="btn-primary">
+              Mostra catalogo elettronica
+            </button>
+          </div>
+          <div id="catalogo" class="output">
+            <!-- catalogo elettronica -->
+          </div>
+          <p id="info-generale" class="meta">
+            <!-- riepilogo categorie/prodotti/somma prezzi -->
+          </p>
+        </div>
+      </article>
+
+      <!-- ESERCIZIO 2 -->
+      <article class="exercise-card full-width" id="esercizio-2">
+        <header class="exercise-header">
+          <h2 class="exercise-title">Esercizio 2 – Carrello semplice</h2>
+          <span class="exercise-tag">carrello · quantità · totale</span>
+        </header>
+        <p class="exercise-desc">
+          Aggiungi prodotti a un carrello senza categorie, gestendo le quantità e il totale.
+          I dati dei prodotti sono inseriti nei pulsanti tramite attributi <code>data-*</code>.
+        </p>
+        <div class="block">
+          <p class="block-title">Prodotti disponibili</p>
+          <div id="pulsanti-prodotti" class="controls">
+            <button class="add-cart btn-ghost"
+                    data-nome="UltraBook 14"
+                    data-prezzo="1499">
+              Aggiungi UltraBook 14 (1499 CHF)
+            </button>
+            <button class="add-cart btn-ghost"
+                    data-nome="Gaming 17"
+                    data-prezzo="1899">
+              Aggiungi Gaming 17 (1899 CHF)
+            </button>
+            <button class="add-cart btn-ghost"
+                    data-nome="Monitor 24&quot;"
+                    data-prezzo="199">
+              Aggiungi Monitor 24" (199 CHF)
+            </button>
+            <button class="add-cart btn-ghost"
+                    data-nome="Monitor 27&quot; 4K"
+                    data-prezzo="399">
+              Aggiungi Monitor 27" 4K (399 CHF)
+            </button>
+            <button class="add-cart btn-ghost"
+                    data-nome="Cuffie Wireless"
+                    data-prezzo="129">
+              Aggiungi Cuffie Wireless (129 CHF)
+            </button>
+            <button class="add-cart btn-ghost"
+                    data-nome="Auricolari In-Ear"
+                    data-prezzo="79">
+              Aggiungi Auricolari In-Ear (79 CHF)
+            </button>
+          </div>
+
+          <div class="controls">
+            <button id="svuota-carrello" class="btn-danger">
+              Svuota carrello
+            </button>
+          </div>
+
+          <div class="block">
+            <p class="block-title">Dettaglio carrello</p>
+            <div id="carrello" class="output">Il carrello è vuoto.</div>
+            <p id="totale-carrello" class="meta">
+              Totale: 0 CHF
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ESERCIZIO 3 -->
+      <article class="exercise-card full-width" id="esercizio-3">
+        <header class="exercise-header">
+          <h2 class="exercise-title">Esercizio 3 – Catalogo abbigliamento con sconto e ricerca</h2>
+          <span class="exercise-tag">sconto · griglia · ricerca</span>
+        </header>
+        <p class="exercise-desc">
+          Mostra un catalogo di abbigliamento con uno sconto del 15% su tutti i prodotti
+          e permetti di cercare un prodotto per nome su tutte le categorie.
+        </p>
+      
+        <div class="block">
+          <p class="block-title">Catalogo con sconto</p>
+          <div class="controls">
+            <button id="btn-mostra-sconti" class="btn-primary">
+              Mostra catalogo abbigliamento scontato
+            </button>
+          </div>
+          <div id="catalogo-scontato" class="output">
+            <!-- catalogo abbigliamento -->
+          </div>
+          <p id="risparmio-totale" class="meta">
+            <!-- risparmio totale -->
+          </p>
+
+          <hr class="soft">
+
+          <p class="block-title">Ricerca prodotto</p>
+          <div class="controls">
+            <input type="text" id="input-cerca" placeholder="es. Giacca elegante">
+            <button id="btn-cerca-prodotto" class="btn-ghost">
+              Cerca
+            </button>
+          </div>
+          <div id="risultato-cerca" class="output">
+            <!-- risultato ricerca -->
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

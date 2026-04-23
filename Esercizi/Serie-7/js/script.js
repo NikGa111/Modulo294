@@ -1,10 +1,8 @@
 /* Nicola Galeano
-   version: 12.03.2026 */
-/* Mini Ecommerce Fast-Food */
+   version: 26.03.2026 */
+/* Serie-7 */
 
 
-/* Struttura dati dei prodotti */
-/* Oggetto principale con categorie, ogni categoria è un array di oggetti */
 
 const prodotti = {
     Panini: [
@@ -25,27 +23,25 @@ const prodotti = {
 };
 
 
-/* Array carrello */
-/* Conterrà oggetti con: nome, prezzo, quantita */
+
 
 const carrello = [];
 
 
-/* Generazione dinamica delle card prodotti */
-/* Per ogni categoria si crea un titolo e le relative card */
+
 
 const section = document.querySelector(".products");
 
 for (const categoria in prodotti) {
 
-    /* Titolo della categoria */
+
 
     const h2 = document.createElement("h2");
     h2.textContent = categoria;
     section.appendChild(h2);
 
 
-    /* Contenitore card della categoria */
+
 
     const div = document.createElement("div");
     div.classList.add("categoria");
@@ -61,7 +57,7 @@ for (const categoria in prodotti) {
             <button>Aggiungi</button>
         `;
 
-        /* Evento click sul bottone aggiungi */
+
 
         const btn = article.querySelector("button");
 
@@ -69,13 +65,6 @@ for (const categoria in prodotti) {
 
             aggiungiAlCarrello(prodotto);
 
-            /* Feedback visivo */
-
-            btn.textContent = "Aggiunto ✓";
-
-            setTimeout(() => {
-                btn.textContent = "Aggiungi";
-            }, 1000);
 
         });
 
@@ -88,8 +77,30 @@ for (const categoria in prodotti) {
 }
 
 
-/* Funzione: aggiungi prodotto al carrello */
-/* Se già presente aumenta la quantità, altrimenti usa push() */
+
+
+const cartToggle = document.querySelector("#cart-toggle");
+const cartAside  = document.querySelector(".cart");
+const cartBadge  = document.querySelector("#cart-badge");
+
+cartToggle.addEventListener("click", () => {
+
+    cartAside.classList.toggle("cart-hidden");
+
+});
+
+
+
+
+function aggiornaBadge() {
+
+    const totaleQuantita = carrello.reduce((acc, item) => acc + item.quantita, 0);
+    cartBadge.textContent = totaleQuantita;
+
+}
+
+
+
 
 function aggiungiAlCarrello(prodotto) {
 
@@ -97,13 +108,13 @@ function aggiungiAlCarrello(prodotto) {
 
     if (esistente) {
 
-        /* Prodotto già nel carrello: aumenta quantità */
+
 
         esistente.quantita += 1;
 
     } else {
 
-        /* Prodotto nuovo: aggiungilo con push() */
+
 
         carrello.push({
             nome:     prodotto.nome,
@@ -118,15 +129,14 @@ function aggiungiAlCarrello(prodotto) {
 }
 
 
-/* Funzione: render completo del carrello */
-/* Rigenera tutto il contenuto <ul> a partire dall'array carrello */
+
 
 function renderCarrello() {
 
     const cartList  = document.querySelector("#cart-list");
     const totalText = document.querySelector("#totale");
 
-    /* Svuota la lista prima di rigenerarla */
+
 
     cartList.innerHTML = "";
 
@@ -140,13 +150,13 @@ function renderCarrello() {
         const li = document.createElement("li");
 
         li.innerHTML = `
-            <span class="cart-name">${item.nome}</span>
+            <div style="width: 250px"><span class="cart-name">${item.nome}</span></div>
             <span class="cart-qty">
                 <button class="qty-btn" data-azione="meno" data-indice="${indice}">−</button>
-                ${item.quantita}
+                <span style="width: 20px ">${item.quantita}</span>
                 <button class="qty-btn" data-azione="piu" data-indice="${indice}">+</button>
             </span>
-            <span class="cart-price">CHF ${subtotale.toFixed(2)}</span>
+            <div style="width: 150px"><span class="cart-price">CHF ${subtotale.toFixed(2)}</span><div>
             <button class="remove-btn" data-indice="${indice}">Rimuovi</button>
         `;
 
@@ -154,18 +164,19 @@ function renderCarrello() {
 
     });
 
-    /* Aggiornamento totale */
+
 
     totalText.textContent = "Totale: CHF " + totale.toFixed(2);
 
+    aggiornaBadge();
 
-    /* Bottoni + e − */
+
 
     document.querySelectorAll(".qty-btn").forEach(btn => {
 
         btn.addEventListener("click", () => {
 
-            const i      = parseInt(btn.dataset.indice);
+            const i = parseInt(btn.dataset.indice);
             const azione = btn.dataset.azione;
 
             if (azione === "piu") {
@@ -174,7 +185,7 @@ function renderCarrello() {
 
             } else if (azione === "meno" && carrello[i].quantita > 1) {
 
-                /* Non scendere sotto 1 */
+
 
                 carrello[i].quantita -= 1;
 
@@ -187,8 +198,7 @@ function renderCarrello() {
     });
 
 
-    /* Bottoni rimuovi */
-    /* Usa splice(indice, 1) per eliminare l'elemento dall'array */
+
 
     document.querySelectorAll(".remove-btn").forEach(btn => {
 

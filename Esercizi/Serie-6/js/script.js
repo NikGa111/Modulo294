@@ -4,7 +4,7 @@
 
 
 /* Parte 1 */
-/* Array prodotti */
+
 
 const products = [
     ["Sneakers", 79.90, "https://picsum.photos/200?1"],
@@ -15,7 +15,7 @@ const products = [
 
 
 /* Parte 2 */
-/* Generazione dinamica card */
+
 
 const section = document.querySelector(".products");
 
@@ -37,7 +37,7 @@ products.forEach(product => {
 
 
 /* Parte 3 */
-/* Gestione bottone acquista */
+
 
 const cartList = document.querySelector("#cart-list");
 const totalText = document.querySelector("#totale");
@@ -58,7 +58,7 @@ buttons.forEach((button, index) => {
 
         const subtotal = price * quantity;
 
-        /* Creazione riga carrello */
+
 
         const li = document.createElement("li");
 
@@ -67,7 +67,7 @@ buttons.forEach((button, index) => {
             <span>CHF ${subtotal.toFixed(2)}</span>
         `;
 
-        /* Bottone rimuovi */
+
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Rimuovi";
@@ -76,13 +76,13 @@ buttons.forEach((button, index) => {
 
         cartList.appendChild(li);
 
-        /* Aggiornamento totale */
+
 
         total += subtotal;
         totalText.textContent = "Totale: CHF " + total.toFixed(2);
 
 
-        /* Rimozione prodotto dal carrello */
+        
 
         removeBtn.addEventListener("click", () => {
 
@@ -94,8 +94,7 @@ buttons.forEach((button, index) => {
         });
 
 
-        /* Step extra */
-        /* Feedback visivo */
+
 
         button.textContent = "Aggiunto ✓";
 
