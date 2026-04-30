@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quattro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        button {
+            padding: 4px 8px;
+            margin-block: 4px;
+        }
+
+        .favorite {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+
+        const chatData = [
+            { text: "Ciao!", favorite: false },
+            { text: "Oggi compiti di JavaScript!", favorite: true }
+        ];
+
+        const list = document.getElementById('list');
+
+
+        function renderChat() {
+            // Svuoto la lista prima di rigenerarla
+            list.innerHTML = '';
+            let html = "";
+
+            chatData.forEach((message, index) => {
+                html += `
+                    <li class="${message.favorite ? 'favorite' : ''}">
+                    ${message.text}
+                    <button class="btn-favorite" data-id="${index}"><i class="bi bi-heart-fill"></i></button>
+                    <button class="btn-modify" data-id="${index}"><i class="bi bi-pencil-fill"></i></button>
+                    <button class="btn-delete" data-id="${index}"><i class="bi bi-trash3"></i></button>
+                    </li>`;
+            })
+
+            list.innerHTML = html;
+        }
+
+        list.addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (!btn) return; // Early return: click fuori dai bottoni, esci.
+
+            const index = Number(btn.dataset.id);
+
+            // Ho già il riferimento al bottone (btn),
+            // quindi posso controllare direttamente le sue classi.
+            if (btn.classList.contains('btn-favorite')) {
+                chatData[index].favorite = !chatData[index].favorite
+                renderChat();
+            }
+
+            if (btn.classList.contains('btn-modify')) {
+
+                const message = prompt('Modifica il messaggio:', chatData[index].text);
+                if (message === null || message.trim() === '') return; // utente ha cliccato Annulla o ha inserito spazi vuoti
+
+                chatData[index].text = message;
+                renderChat();
+            }
+
+            if (btn.classList.contains('btn-delete')) {
+                chatData.splice(index, 1)
+                renderChat();
+
+            }
+        })
+
+        renderChat();
+
+    </script>
+</body>
+
+</html>

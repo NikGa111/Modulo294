@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uno</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        button {
+            padding: 4px 8px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        const items = ["Pane", "Latte", "Uova", "Pasta"];
+        const list = document.getElementById('list');
+
+        function populateList() {
+            // Svuoto la lista prima di rigenerarla
+            list.innerHTML = '';
+            items.forEach((value, index) => {
+
+                let new_item = document.createElement('li')
+                new_item.textContent = value;
+
+                new_item.dataset.id = index;
+
+                let btn = document.createElement('button');
+                btn.innerHTML = `<i class="bi bi-trash3"></i>`
+
+                new_item.append(btn);
+                list.append(new_item);
+
+
+                new_item.addEventListener('click', (e) => {
+                    //console.log(e.target.closest('button'))
+                    if (e.target.closest('button')) { // e.target → l’elemento su cui hai fatto click
+                        // e.currentTarget è sempre l’elemento su cui è registrato l’event listener (in questo caso <li>),
+                        // quindi è più sicuro di e.target per recuperare il data-id, anche se il click avviene sull’icona o sul bottone.
+                        // JavaScript converte la stringa in numero “al volo”, ma farlo esplicitamente è più chiaro.
+                        let index = Number(e.currentTarget.dataset.id);
+                        console.log(index)
+
+                        items.splice(index, 1);
+                        populateList()
+                    }
+                })
+
+            });
+
+
+        }
+
+        populateList();
+
+
+    </script>
+</body>
+
+</html>

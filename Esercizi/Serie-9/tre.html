@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tre</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        button {
+            padding: 4px 8px;
+            margin-block: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+
+        const products = [
+            { name: "Laptop", qty: 1 },
+            { name: "Smartphone", qty: 2 },
+            { name: "Tablet", qty: 0 }
+        ];
+
+        const list = document.getElementById('list');
+
+
+        function renderList() {
+            // Svuoto la lista prima di rigenerarla
+            list.innerHTML = '';
+            let html = "";
+
+            products.forEach((product, index) => {
+                html += `
+                    <li>
+                    ${product.name}
+                    <button class="minus" data-id="${index}"><i class="bi bi-dash"></i></button>
+                    <span class="qty">${product.qty}</span>
+                    <button class="plus" data-id="${index}"><i class="bi bi-plus"></i></button>
+                    </li>`;
+            })
+
+            list.innerHTML = html;
+        }
+
+        list.addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (!btn) return; // Early return: click fuori dai bottoni, esci.
+            
+            const index = Number(btn.dataset.id);
+            
+            // ho già il riferimento a btn
+            // quindi controllo se l’elemento stesso (il bottone) ha la classe minus.
+            if (btn.classList.contains('minus')) {
+                if (!products[index].qty) return;
+                products[index].qty -= 1;
+                renderList();
+            }
+
+            if (btn.classList.contains('plus')) {
+                products[index].qty += 1;
+                renderList();
+            }
+        })
+
+        renderList();
+
+    </script>
+</body>
+
+</html>
