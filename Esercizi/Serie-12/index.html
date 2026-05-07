@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watchlist CRUD - MockAPI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1>Watchlist</h1>
+    <p>Serie · Anime · Film</p>
+  </header>
+
+  <main class="container layout">
+
+    <!-- COLONNA SINISTRA: FORM -->
+    <aside class="sidebar">
+      <h2>Aggiungi / Modifica</h2>
+
+      <div id="status" class="status">Pronto.</div>
+
+      <form id="itemForm" class="form">
+        <input type="hidden" id="itemId" />
+
+        <label>
+          Titolo
+          <input id="title" type="text" required />
+        </label>
+
+        <label>
+          Tipo
+          <select id="type">
+            <option>Anime</option>
+            <option>Serie</option>
+            <option>Film</option>
+          </select>
+        </label>
+
+        <label>
+          Piattaforma
+          <input id="platform" type="text" required />
+        </label>
+
+        <label>
+          Stato
+          <select id="statusSelect">
+            <option>To Watch</option>
+            <option>Watching</option>
+            <option>Completed</option>
+          </select>
+        </label>
+
+        <label class="rating">
+          Rating
+          <input id="rating" type="number" min="1" max="10" />
+        </label>
+
+        <label>
+          Cover URL
+          <input id="coverUrl" type="url" placeholder="https://..." required />
+        </label>
+
+        <label>
+          Note
+          <textarea id="notes" rows="3"></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Salva</button>
+          <button type="button" id="btnCancel">Annulla</button>
+        </div>
+      </form>
+    </aside>
+
+    <!-- COLONNA DESTRA: LISTA -->
+    <section class="content">
+      <h2>La tua watchlist</h2>
+      <div id="grid" class="grid">
+        <!-- elementi creati da JavaScript -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
