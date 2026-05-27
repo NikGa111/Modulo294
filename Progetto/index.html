@@ -1,0 +1,32 @@
+<!-- Nicola Galeano I2BD -- 27.05 -->
+ <!-- HTML generato con l'ai, prima ho pensato ai metodi da implementare e poi gli ho chiesto di sviluppare una struttura che comprendesse questi dati.-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaMeteo.nik</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ LaMeteo.nik</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="In inglese!! es. Milan, Lugano, Paris..." autocomplete="off">
+            <button id="searchBtn">Cerca meteo</button>
+        </div>
+
+        <div id="weatherResult" class="weather-card hidden">
+            <div class="weather-icon" id="weatherIcon">🌍</div>
+            <div class="city-name" id="cityName">--</div>
+            <div class="temperature" id="temperature">--°C</div>
+            <div class="description" id="description">--</div>
+        </div>
+
+        <div id="errorMessage" class="error hidden"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
