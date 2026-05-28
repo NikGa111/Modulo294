@@ -62,7 +62,7 @@ async function searchWeather() {
     var cityName = cityInput.value.trim();
     
     if (cityName === "") {
-        showError("❌ Inserisci il nome di una città");
+        showError("Inserisci il nome di una città");
         return;
     }
     
@@ -70,14 +70,18 @@ async function searchWeather() {
     weatherResult.classList.add("hidden");
     
     try {
-        // STEP 1: ottieni coordinate dalla città (geocoding). Deepseek mi ha aiutato a capire come costruire la url per ottenere le coordinate, e poi con quelle coordinate posso ottenere la meteo.
+
+        // La soluzione delle coordinate mi sembrava quella più utile per la mia idea che era aggiungere una mappa :)
+
+
+        // Ottiene le cordinate longitudine e latitudine. Deepseek mi ha aiutato a capire come costruire la url per ottenere le coordinate, e poi con quelle coordinate posso ottenere la meteo.
         var geoUrl = "https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(cityName) + "&count=1";
         var geoResponse = await fetch(geoUrl);
         var geoData = await geoResponse.json();
         
         // Controllo se città esiste
         if (!geoData.results || geoData.results.length === 0) {
-            showError("❌ Città non trovata: \"" + cityName + "\"");
+            showError("Città non trovata: \"" + cityName + "\"");
             return;
         }
         
@@ -88,13 +92,13 @@ async function searchWeather() {
         
         var displayName = country ? realCityName + ", " + country : realCityName;
         
-        // STEP 2: ottieni meteo corrente con le coordinate
+        // Dalle coordinate ricava la meteo della regione, dà anche venti e altre info, ma io prendo solo la temperatura e il weathercode
         var weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&current_weather=true";
         var weatherResponse = await fetch(weatherUrl);
         var weatherDataJson = await weatherResponse.json();
         
         if (!weatherDataJson.current_weather) {
-            showError("❌ Dati meteo non disponibili");
+            showError("Dati meteo non disponibili");
             return;
         }
         // weathercode serve per l'icona
